@@ -11,7 +11,7 @@
   <em>Figure 1: HPN framework overview</em>
 </p>
 
-## 📖 Table of Contents
+## Table of Contents
 
 - [Project Background & Core Motivation](#project-background--core-motivation)
 - [Core HPN Architecture Overview](#core-hpn-architecture-overview)
@@ -55,7 +55,7 @@ HPN is **neither purely modular nor fully monolithic**. It adopts a **team-of-ex
 
 ---
 
-## Core HPN Architecture Overview
+## 🏛️ Core HPN Architecture Overview
 
 The complete HPN system consists of 4 core functional modules, built upon a shared BEV perception backbone:
 
@@ -80,7 +80,7 @@ Multiple lightweight end-to-end expert models, each exclusively trained on a ded
 
 ---
 
-## Four-Tier Driving Primitive Hierarchy
+## 🔢 Four-Tier Driving Primitive Hierarchy
 
 > **Priority order: Tier 0 > Tier 1 > Tier 2 > Tier 3**
 > "Highest priority to the least frequent but most critical events."
@@ -135,7 +135,7 @@ Multiple lightweight end-to-end expert models, each exclusively trained on a ded
 
 ---
 
-## Project Key Features
+## 🎯 Project Key Features
 > *What HPN offers — a quick overview of system capabilities*
 
 | Feature | Description |
@@ -150,7 +150,7 @@ Multiple lightweight end-to-end expert models, each exclusively trained on a ded
 
 ---
 
-## HPN Theoretical Advantages
+## 🧬 HPN Theoretical Advantages
 > *Why HPN works — the foundational principles behind the architecture*
 
 **1. Solves the Long-Tail Defect**
