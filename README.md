@@ -19,7 +19,7 @@
 - [Project Key Features](#project-key-features)
 - [HPN Theoretical Advantages](#hpn-theoretical-advantages)
 
-## Project Background & Core Motivation
+## 📖 Project Background & Core Motivation
 
 Two mainstream autonomous driving architectures have irreconcilable drawbacks:
 
