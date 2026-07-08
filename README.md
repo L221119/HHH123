@@ -11,7 +11,7 @@
   <em>Figure 1: HPN framework overview</em>
 </p>
 
-## 📖 Table of Contents
+## 📚 Table of Contents
 
 - [Project Background & Core Motivation](#project-background--core-motivation)
 - [Core HPN Architecture Overview](#core-hpn-architecture-overview)
@@ -59,16 +59,16 @@ HPN is **neither purely modular nor fully monolithic**. It adopts a **team-of-ex
 
 The complete HPN system consists of 4 core functional modules, built upon a shared BEV perception backbone:
 
-### 1. Shared Perception Backbone (SPB)
+### 🧠 1. Shared Perception Backbone (SPB)
 Fuses raw camera, LiDAR, radar, GPS and vehicle dynamics signals into unified BEV bird's-eye view world representation, serving as the single environmental truth source for all downstream modules.
 
-### 2. Arbiter (High-Level Decision Brain)
+### 🎯 2. Arbiter (High-Level Decision Brain)
 A high-level classification network that takes BEV features + navigation goals, selects the matching expert driving primitive policy according to current driving state, and outputs candidate policy proposals.
 
-### 3. Policy Gateway & Verifier (PGV)
+### 🛡️ 3. Policy Gateway & Verifier (PGV)
 Deterministic rule-based safety guardrail module. Hard-coded traffic laws and safety constraints validate Arbiter-proposed policies; invalid dangerous policies are rejected and blocked from vehicle actuation.
 
-### 4. Tiered Expert Policy Team
+### 🚀 4. Tiered Expert Policy Team
 Multiple lightweight end-to-end expert models, each exclusively trained on a dedicated driving primitive. Policies are divided into 4 priority tiers with strict preemption logic to prioritize rare safety-critical tail scenarios.
 
 <p align="center">
@@ -151,21 +151,25 @@ Multiple lightweight end-to-end expert models, each exclusively trained on a ded
 ---
 
 ## HPN Theoretical Advantages
+
 > *Why HPN works — the foundational principles behind the architecture*
 
-**1. Solves the Long-Tail Defect**
+---
+
+### **① Solves the Long-Tail Defect**  
 Imbalanced driving data is split across independent expert models. Tail scenarios are no longer suppressed by the overwhelming majority of routine driving data — each expert masters its own distribution.
 
-**2. Retains Formal Safety Guarantees**
+### **② Retains Formal Safety Guarantees**  
 The PGV layer adds hard safety constraints that cannot be overridden by any neural network output — a guarantee pure end-to-end systems cannot provide.
 
-**3. Enables Complete Traceability**
+### **③ Enables Complete Traceability**  
 The Arbiter explicitly selects the active primitive. Any accident or failure can be pinpointed to a specific component: BEV perception → Arbiter decision → Expert policy → PGV validation.
 
-**4. Supports Modular Evolution**
+### **④ Supports Modular Evolution**  
 Each tier's expert can be updated, replaced, or retrained independently — without revalidating the entire driving stack. This enables parallel team development just like traditional modular pipelines.
 
-**5. Reduces Computational Overhead**
+### **⑤ Reduces Computational Overhead**  
 A single shared BEV perception backbone serves all experts, avoiding redundant multi-sensor fusion computation across the entire system.
 
 ---
+
