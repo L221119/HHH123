@@ -127,11 +127,14 @@ Multiple lightweight end-to-end expert models, each exclusively trained on a ded
 
 > ⚡ **Preemption**: Lowest priority, preempted by **all** upper tiers
 
+> 📌 **Digital Twin Note**: Each Tier 3 primitive policy is trained with **two separate digital twin models**, enabling parallel simulation-based validation and real-world deployment alignment.
+
 ### ✨ Key Design Advantages
 
 - Rare but safety-critical tail scenarios (Tier 0/1/2) receive higher execution priority, solving the problem of long-tail underfitting in single end-to-end models
 - Each expert only learns their own exclusive scenario distribution, without statistical noise interference
 - HPN can be represented as a finite state machine (FSM), where the driving elements represent the system state, and transitions between states are controlled by the Arbiter
+- **Strict Preemption**: Higher-tier policies (Tier 0/1/2) can forcibly preempt lower-tier execution at any time. This ensures that rare but critical tail events (e.g., emergency braking) always take priority over routine driving behaviors, regardless of what the lower-tier expert model suggests.
 
 ---
 
